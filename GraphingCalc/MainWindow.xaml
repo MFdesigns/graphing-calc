@@ -16,13 +16,42 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="0" Grid.Row="0">
-            <TextBox Text="x"/>
-            <Button Content="Calculate" Click="CalcButtonClick"/>
-        </StackPanel>
+        <Border Padding="10">
+            <StackPanel Grid.Column="0" Grid.Row="0">
+                <TextBlock FontSize="15" FontWeight="Bold" Margin="0, 0, 0, 10">Graphing Calculator</TextBlock>
+                <TextBlock>
+                ax
+                <Run Typography.Variants="Superscript">2</Run>
+                + bx + c = 0
+                </TextBlock>
+
+                <Grid Margin="0, 10, 0, 10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Column="0" Grid.Row="0" Content="a:"/>
+                    <TextBox Name="inputVarA" Grid.Column="1" Grid.Row="0" Width="auto" Text="2"/>
+
+                    <Label Grid.Column="0" Grid.Row="1" Content="b:"/>
+                    <TextBox Name="inputVarB" Grid.Column="1" Grid.Row="1" Width="auto" Text="0"/>
+
+                    <Label Grid.Column="0" Grid.Row="2" Content="c:"/>
+                    <TextBox Name="inputVarC" Grid.Column="1" Grid.Row="2" Width="auto" Text="0"/>
+                </Grid>
+
+                <Button Margin="0, 10, 0, 0" Content="Calculate" Click="CalcButtonClick"/>
+            </StackPanel>
+        </Border>
 
         <Canvas Name="mainCanvas" Grid.Column="1" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <Rectangle Canvas.Top="20" Canvas.Left="20" Fill="Beige" Height="20" Width="20" />
         </Canvas>
     </Grid>
 </Window>
