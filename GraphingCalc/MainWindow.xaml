@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GraphingCalc"
         mc:Ignorable="d"
+        Loaded="WindowLoaded"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="0" Grid.Row="0">
+            <TextBox Text="x"/>
+            <Button Content="Calculate" Click="CalcButtonClick"/>
+        </StackPanel>
+
+        <Canvas Name="mainCanvas" Grid.Column="1" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Rectangle Canvas.Top="20" Canvas.Left="20" Fill="Beige" Height="20" Width="20" />
+        </Canvas>
     </Grid>
 </Window>
